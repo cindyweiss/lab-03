@@ -1,50 +1,45 @@
-<!-- Note: you may use this starter code, but it is not a requirement -->
+new messages
+< !DOCTYPE html>
+  <html>
 
-<!DOCTYPE html>
-<html>
-
-<head>
-  <title>The Gallery of Horns</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/base.css">
-  <link rel="stylesheet" href="./css/layouts.css">
-  <link rel="stylesheet" href="./css/modules.css">
-  <script id="script-template" type="text/x-handlebars-template">
-    <h2>{{title}}</h2>
-    <img src= "{{image_url}}"/>
-    <p>{{description}}</p>
-    <p>Horns: {{horns}}</p>
-    <p>keyword: {{keyword}}</p>
+  <head>
+    <title>The Gallery of Horns</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./css/reset.css"> -->
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/layouts.css">
+    <link rel="stylesheet" href="./css/modules.css">
+    <script id="script-template" type="text/x-handlebars-template">
+    <h2>{{ title }}</h2>
+    <img src="{{image_url}}" />
+    <p>{{ description }}</p>
+    <p>Horns: {{ horns }}</p>
+    <p>Keyword:{{ keyword }}</p>
     {{{body}}}
   </script>
+  </head>
 
+  <body>
+    <header>
+      <h1>The Gallery of Horns</h1>
+      <select>
+        <option value="default" id="nav">Navigate</option>
+      </select>
+      <br>
+      <select>
+        <option value="default" id="filter">Filter by Keyword</option>
+      </select>
+    </header>
+    <main>
+      <section id="pic-template">
+      </section>
+    </main>
+    <footer>
+      &copy; 2018 Code Fellows
+    </footer>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+  <script src="./js/app.js"></script>
 
-</head>
-
-<body>
-  <header>
-    <h1>The Gallery of Horns</h1>
-    <select>
-      <option value="default">navigate</option>
-    </select>
-    <select>
-      <option value="default" id="filter">Filter by Keyword</option>
-    </select>
-  </header>
-  <main>
-    <section id="pic-template">
-    </section>
-  </main>
-  <footer>
-    &copy; 2018 Code Fellows
-  </footer>
-</body>
-
-<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-
-<script src="./js/app.js"></script>
-
-</html>
+  </html>
