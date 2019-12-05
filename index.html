@@ -10,26 +10,38 @@
   <link rel="stylesheet" href="./css/base.css">
   <link rel="stylesheet" href="./css/layouts.css">
   <link rel="stylesheet" href="./css/modules.css">
+  <script id="script-template" type="text/x-handlebars-template">
+    <h2>{{title}}</h2>
+    <img src= "{{image_url}}"/>
+    <p>{{description}}</p>
+    <p>Horns: {{horns}}</p>
+    <p>keyword: {{keyword}}</p>
+    {{{body}}}
+  </script>
+
+
 </head>
 
 <body>
   <header>
     <h1>The Gallery of Horns</h1>
     <select>
-      <option value="default">Filter by Keyword</option>
+      <option value="default">navigate</option>
+    </select>
+    <select>
+      <option value="default" id="filter">Filter by Keyword</option>
     </select>
   </header>
   <main>
     <section id="pic-template">
-      <h2></h2>
-      <img src="" alt="">
-      <p></p>
     </section>
   </main>
   <footer>
     &copy; 2018 Code Fellows
   </footer>
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 

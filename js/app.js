@@ -1,12 +1,11 @@
 'use strict';
-const picarr = [];
-const keywordArr = [];
+let picarr = [];
+let keywordArr = [];
 
 function Pic(picObj) {
   this.title = picObj.title;
   this.description = picObj.description;
   this.keyword = picObj.keyword;
-  // keywordArr.push(picObj.keyword);
   this.horns = picObj.horns;
   this.image_url = picObj.image_url;
   picarr.push(this);
@@ -35,11 +34,11 @@ $.get('./data/page-1.json', data => {
     }
   });
   keywordArr.forEach(i => {
-    $('select').append(`<option>${i}</option>`);
+    $('#filter').append(`<option>${i}</option>`);
   });
 });
 
-$('select').on('change', function () {
+$('#filter').on('change', function () {
   $('section').hide();
   picarr.forEach(pic => {
     if (this.value === pic.keyword) {
