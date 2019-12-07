@@ -1,9 +1,10 @@
+
+
 section{
-  display: inline-block;
+  display: flex;
+  justify-content: space-between;
   width: 200px;
-  height: 200px;
-  
-  
+  height: 960px;
   }
 
  img {
@@ -18,18 +19,15 @@ section{
    height: 80px;
    text-align: center;
    overflow: scroll;
-  
- }
+  }
 
  h1{
    text-align: center;
-
- }
+}
 
  h2{
    max-width: 200px;
    text-align: center;
-   
- }
+   }
   
-  //
+  

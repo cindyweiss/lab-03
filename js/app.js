@@ -9,7 +9,6 @@ function Pic(picObj) {
   this.keyword = picObj.keyword;
   this.horns = picObj.horns;
   this.image_url = picObj.image_url;
-  // picArr.push(this);
 }
 
 Pic.prototype.render = function () {
@@ -18,10 +17,6 @@ Pic.prototype.render = function () {
   return template(this);
 }
 
-// picArr.forEach(picture => {
-//   $('#pic-template').append(new Pic(picture).render());
-// })
-
 // GET JSON DATA INTO ARRAY 'picArr'
 
 $.get('./data/page-1.json', data => { //  ajax callback function
@@ -29,10 +24,9 @@ $.get('./data/page-1.json', data => { //  ajax callback function
   data.forEach(pic => {
     let pushedObj = new Pic(pic);
     picArr.push(pushedObj);
-    // const temp = template(pushedObj);
     $('#pic-template').append(new Pic(pic).render());
   });
-  console.log(picArr);
+  console.log(picArr); // picArr PASSED
 
   //  MAKE KEYWORD ARRAY OF UNIQUES
 
@@ -43,40 +37,17 @@ $.get('./data/page-1.json', data => { //  ajax callback function
     }
   });
   console.log(keywordArr); // PASSED
-
-  // picArr.forEach(picToRender => {
-  //   $('#pic-template').append(picToRender);
-  // })
 });
 
 //  LISTEN FOR FILTER MENU CHANGE AND RENDER
 
 $('#select-filter').on('change', function () {
-  $('#pic-template').hide();
-  picArr.forEach(pic => {
-    if (this.value === pic.keyword || this.value === 'default') {
-      pic.render();
+  $('section').hide();
+  picArr.forEach(pic => { //dropdown this.value works
+    if (this.value === pic.keyword) {
+      $(`.${this.value}`).show(); // THIS LINE IS BROKEN, see handlebars
+    } else if (this.value === 'default') {
+      $('section').show();
     }
   });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
